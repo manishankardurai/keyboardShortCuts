@@ -3,6 +3,20 @@ import {
   withKeyboardShortcuts,
   KeyboardShortcut
 } from '../../package/react-keypress';
+import { store } from 'react-notifications-component';
+
+export const notifications = (message, title) => {
+  store.addNotification({
+    title: title,
+    message: message,
+    type: 'success',
+    insert: 'bottom',
+    container: 'bottom-right',
+    dismiss: {
+      duration: 1000
+    }
+  });
+};
 
 const MyComponent = () => {
   const [backgrund, setBg] = useState('red');
@@ -14,6 +28,7 @@ const MyComponent = () => {
         callback={() => {
           const val = backgrund === 'red' ? 'green' : 'red';
           setBg(val);
+          notifications('shift a', "CallBack Trigger when pressing 'shift a'");
         }}
       />
       <KeyboardShortcut
@@ -21,6 +36,7 @@ const MyComponent = () => {
         description="Press 'cmd p' to change color to blue"
         callback={() => {
           setBg(backgrund === 'blue' ? 'yellow' : 'blue');
+          notifications('cmd p', "CallBack Trigger when pressing 'cmd p'");
         }}
       />
 
