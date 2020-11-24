@@ -1,0 +1,46 @@
+html,
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  margin-left: 10px;
+  margin: 40px;
+}
+
+.ContainerClass {
+  display: flex;
+  flex-direction: row;
+}
+.activeKeys {
+  color: black !important;
+}
+
+.rightSide {
+  width: 50%;
+}
+
+.leftSide{
+  width: 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.setheight {
+  height: 300px;
+  width: 100%;
+  margin: 20px;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
