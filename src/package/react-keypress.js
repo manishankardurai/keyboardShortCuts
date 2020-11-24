@@ -1,5 +1,5 @@
-import React, { useEffect, useContext, createContext, Component } from "react";
-const  keypress = require("keypress.js");
+import React, { useEffect, useContext, createContext, Component } from 'react';
+const keypress = require('keypress.js');
 
 export const KeyboardContext = createContext({
   shortcuts: []
@@ -8,7 +8,7 @@ export const KeyboardContext = createContext({
 export const ContextProvider = KeyboardContext.Provider;
 export const ContextConsumer = KeyboardContext.Consumer;
 
-export const withKeyboardShortcuts = (ChildComp) =>
+export const withKeyboardShortcuts = ChildComp =>
   class extends Component {
     state = {
       shortcuts: []
@@ -16,8 +16,8 @@ export const withKeyboardShortcuts = (ChildComp) =>
 
     kpListener = new keypress.Listener();
 
-    addShortcut = (prop) => {
-      this.setState((state) => ({ shortcuts: [...state.shortcuts, prop] }));
+    addShortcut = prop => {
+      this.setState(state => ({ shortcuts: [...state.shortcuts, prop] }));
     };
 
     render() {
@@ -29,10 +29,7 @@ export const withKeyboardShortcuts = (ChildComp) =>
             addShortcut: this.addShortcut
           }}
         >
-          <ChildComp
-            {...this.props}
-            activeShortCuts={this.state.shortcuts}
-          />
+          <ChildComp {...this.props} activeShortCuts={this.state.shortcuts} />
         </ContextProvider>
       );
     }
@@ -40,30 +37,29 @@ export const withKeyboardShortcuts = (ChildComp) =>
 
 export const KeyboardShortcut = ({ combo, description, callback }) => {
   const state = useContext(KeyboardContext);
-  const kpListener = new keypress.Listener();
 
   useEffect(() => {
-    if (kpListener) {
-      kpListener.simple_combo(combo, (event) => {
+    if (state.kpListener) {
+      state.kpListener.simple_combo(combo, event => {
         callback();
       });
 
-      if(state) {
+      if (state) {
         state.addShortcut({
           shortcut: combo,
           description
-        }) 
+        });
       }
     }
 
     return () => {
-      if (kpListener) {
-        kpListener.unregister_combo(combo);
+      if (state.kpListener) {
+        state.kpListener.unregister_combo(combo);
       }
     };
-  }, []);
+  }, [state.kpListener]);
 
-  return kpListener ? null : (
+  return state.kpListener ? null : (
     <span>
       No context found. Wrap your component with "withKeyboardShortcuts"
     </span>

@@ -1,29 +1,34 @@
-import React, { useState } from "react";
-import { withKeyboardShortcuts, KeyboardShortcut } from "../../package/react-keypress";
+import React, { useState } from 'react';
+import {
+  withKeyboardShortcuts,
+  KeyboardShortcut
+} from '../../package/react-keypress';
 
 const MyComponent = () => {
-  const [bg, setBg] = useState("red");
+  const [backgrund, setBg] = useState('red');
   return (
     <div className="App">
       <KeyboardShortcut
-        combo={"shift a"}
+        combo={'shift a'}
         description="Press 'shift a' to change color to green or red"
         callback={() => {
-          const val = bg === "red" ? "green" : "red"
-          setBg(val)
+          const val = backgrund === 'red' ? 'green' : 'red';
+          setBg(val);
         }}
       />
       <KeyboardShortcut
-        combo={"cmd p"}
+        combo={'cmd p'}
         description="Press 'cmd p' to change color to blue"
         callback={() => {
-          setBg(bg === "blue" ? "yellow" : "blue")
+          setBg(backgrund === 'blue' ? 'yellow' : 'blue');
         }}
       />
 
-
-      <div className='container'>
-        <div className='componentA setheight' style={{ backgroundColor: bg }}>
+      <div className="container">
+        <div
+          className="componentA setheight"
+          style={{ backgroundColor: backgrund }}
+        >
           {'Press "shift a" OR "cmd p"'}
         </div>
       </div>
@@ -32,6 +37,3 @@ const MyComponent = () => {
 };
 
 export default MyComponent;
-
-
-
