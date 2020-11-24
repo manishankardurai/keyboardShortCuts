@@ -37,7 +37,7 @@ You will get those list of active Short cut keys in Component Props.
 
 ### Demo
 
-Preview [demo](). 
+Preview [demo](https://manisankar-reactkshortcut.herokuapp.com/). 
 
 Example: 
 
