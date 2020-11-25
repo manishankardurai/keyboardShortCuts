@@ -70,7 +70,7 @@ export default withKeyboardShortcuts(AppWrapper);
 import React, { useState } from "react";
 import { withKeyboardShortcuts, KeyboardShortcut } from "./multipleKeyHandler";
 
-const ComponentA = ({activeShortCuts}) => {
+const ComponentA = () => {
   const [bg, setBg] = useState("red");
   return (
     <div className="App">
