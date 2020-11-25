@@ -110,7 +110,7 @@ Props | Description |
 --- | --- | 
 combo | Passing keys as string | 
 description | description of your keyboard shortcut
-callback | callback function that need to trigger on pressing your combo key
+callback | callback function that will trigger on pressing your combo key
 
 
 Internally this will listen to listener constructed using [keypress.js](http://dmauro.github.io/Keypress/) with simple_combo API on mounting and will unregister on unmounting. 
