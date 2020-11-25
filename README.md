@@ -113,6 +113,6 @@ description | description of your keyboard shortcut
 callback | callback function that need to trigger on pressing your combo key
 
 
-Internally this will listen to  [keypress.js](http://dmauro.github.io/Keypress/) with simple_combo API on mounting and will unregister on unmounting. 
+Internally this will listen to listener constructed using [keypress.js](http://dmauro.github.io/Keypress/) with simple_combo API on mounting and will unregister on unmounting. 
 
 You can get the activeShortCuts by wrapping with HOC function called `withKeyboardShortcuts` along your own parent component which holds `KeyboardShortcut` as child. So that you will receive a list of active shortcut as prop called `activeShortCuts` on your own component for display in help page. 
