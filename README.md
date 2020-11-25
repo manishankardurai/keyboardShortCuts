@@ -100,3 +100,19 @@ const ComponentA = () => {
 export default ComponentA;
 
 ```
+
+
+#### Explanation About the Approach
+
+To listen the pressed keyboard keys, use `<KeyboardShortcut />` with below props. 
+
+Props | Description | 
+--- | --- | 
+combo | Passing keys as string | 
+description | description of your keyboard shortcut
+callback | callback function that need to trigger on pressing your combo key
+
+
+Internally this will listen to  [keypress.js](http://dmauro.github.io/Keypress/) with simple_combo API on mounting and will unregister on unmounting. 
+
+You can get the activeShortCuts by wrapping with HOC function called `withKeyboardShortcuts` along your own parent component which holds `KeyboardShortcut` as child. So that you will receive a prop called `activeShortCuts` on your own component. 
