@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyboardShortcut } from '../../package/react-keypress';
+import { KeyboardShortcut } from '../../package';
 import { notifications } from './ComponentA';
 
 const AnotherComponent = () => {

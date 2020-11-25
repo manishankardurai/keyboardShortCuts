@@ -1,6 +1,6 @@
 html,
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 * {
   box-sizing: border-box;
@@ -22,7 +22,7 @@ body {
   width: 50%;
 }
 
-.leftSide{
+.leftSide {
   width: 50%;
 }
 

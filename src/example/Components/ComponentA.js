@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import {
-  withKeyboardShortcuts,
-  KeyboardShortcut
-} from '../../package/react-keypress';
+import { KeyboardShortcut } from '../../package';
 import { store } from 'react-notifications-component';
 
 export const notifications = (message, title) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import AppWrapper from './pages/appWrapper';
+import AppWrapper from './appWrapper';
 import ReactNotification from 'react-notifications-component';
 import 'react-notifications-component/dist/theme.css';
 

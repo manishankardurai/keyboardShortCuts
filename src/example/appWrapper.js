@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ComponentA from './Components/ComponentA';
 import ComponentB from './Components/ComponentB';
 import ShowActiveComponent from './Components/ShowActiveComponent';
-import { withKeyboardShortcuts } from '../package/react-keypress';
+import { withKeyboardShortcuts } from '../package';
 
 class AppWrapper extends Component {
   render() {
