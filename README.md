@@ -28,7 +28,7 @@ import { withKeyboardShortcuts, KeyboardShortcut } from "react-keypress-js";
       />
 ```
 
-Also To get the active shortcut keys you can use a HOC function like below by passing your own component
+Also To get the active shortcut keys you can use a HOC function like below by wrapping your own parent component
 
 ```js
   export default withKeyboardShortcuts(AppWrapper);
